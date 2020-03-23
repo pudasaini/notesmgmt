@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>docmgmt</artifactId>
+    <artifactId>notesmgmt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>docmgmt</name>
+    <name>notesmgmt</name>
     <description>Spring Boot</description>
 
     <properties>
