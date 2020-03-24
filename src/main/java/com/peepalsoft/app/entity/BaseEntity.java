@@ -15,6 +15,7 @@ import java.util.Date;
 @MappedSuperclass
 @Getter
 @Setter
+
 public class BaseEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
