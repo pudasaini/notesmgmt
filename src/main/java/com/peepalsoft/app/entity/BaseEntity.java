@@ -1,6 +1,8 @@
 package com.peepalsoft.app.entity;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,6 +13,8 @@ import javax.persistence.TemporalType;
 import java.util.Date;
 
 @MappedSuperclass
+@Getter
+@Setter
 public class BaseEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -22,21 +26,7 @@ public class BaseEntity {
     @UpdateTimestamp
     protected Date updatedAt;
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 
 
 }

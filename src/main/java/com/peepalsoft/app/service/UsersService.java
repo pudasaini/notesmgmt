@@ -1,15 +1,14 @@
 package com.peepalsoft.app.service;
 
-import java.util.List;
-
+import com.peepalsoft.app.component.UsersComponent;
+import com.peepalsoft.app.entity.Users;
+import com.peepalsoft.app.repo.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.peepalsoft.app.component.UsersComponent;
-import com.peepalsoft.app.entity.Users;
-import com.peepalsoft.app.repo.UsersRepo;
+import java.util.List;
 
 @Service
 public class UsersService {

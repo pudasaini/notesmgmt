@@ -1,13 +1,12 @@
 package com.peepalsoft.app.component;
 
-import java.util.List;
-
+import com.peepalsoft.app.message.HttpResponses;
+import com.peepalsoft.app.message.Messages;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.peepalsoft.app.message.HttpResponses;
-import com.peepalsoft.app.message.Messages;
+import java.util.List;
 
 @Service
 public class CrudReturnService<T> {

@@ -1,12 +1,11 @@
 package com.peepalsoft.app.repo;
 
-import java.util.List;
-
+import com.peepalsoft.app.entity.Office;
+import com.peepalsoft.app.entity.Staffs;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.peepalsoft.app.entity.Office;
-import com.peepalsoft.app.entity.Staffs;
+import java.util.List;
 
 @Repository
 public interface StaffsRepo extends JpaRepository<Staffs, String>{
