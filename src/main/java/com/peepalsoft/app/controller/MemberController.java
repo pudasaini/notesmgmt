@@ -1,24 +1,36 @@
 package com.peepalsoft.app.controller;
 
 import com.peepalsoft.app.entity.Member;
+import com.peepalsoft.app.entity.notes.enums.MemberRoleEnum;
 import com.peepalsoft.app.repo.MemberRepo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.stream.Location;
+import java.beans.PropertyEditor;
+import java.beans.PropertyEditorSupport;
 import java.util.List;
 
 @RestController
 @RequestMapping("member")
 public class MemberController {
+
+
+    private MemberRepo memberRepo;
+
     @Autowired
-    MemberRepo memberRepo;
+    public void setMemberRepo(MemberRepo memberRepo) {
+        this.memberRepo = memberRepo;
+    }
 
 
     @GetMapping(path = "/create-page")
     public ModelAndView createpage() {
         ModelAndView model = new ModelAndView("member/create");
-        // model.addObject("member", memberRepo.findAll());
         return model;
     }
 
@@ -37,4 +49,21 @@ public class MemberController {
         List<Member> list = memberRepo.findAll();
         return list;
     }
+    @GetMapping(value="/view-page")
+    public ModelAndView data(){
+        ModelAndView model = new ModelAndView("member/view");
+        // model.addObject("students", new Students());
+        return model;
+    }
+    @DeleteMapping("/delete/{id}")
+    void  delete(@PathVariable int  id) {
+        Member member = memberRepo.findById(id).get();
+        if (member == null)
+        {
+            System.out.println("The requested id was not found");
+        }
+        memberRepo.delete(member);
+    }
+
+
 }

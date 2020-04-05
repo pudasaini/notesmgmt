@@ -1,5 +1,7 @@
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring-form" uri="http://www.springframework.org/tags/form" %>
 <ui:header />
 <div class="row">
     <div class="col-lg-12">
@@ -48,9 +50,9 @@
                         <label class="col-md-3 control-label" for="member_role">Member
                             Role</label>
                         <div class="col-md-6">
-                            <select class="form-control input-sm mb-md" name="member_role" id="member_role">
-                                <option value="ho">STUDENT</option>
-                                <option value="ro">TEACHER</option>
+                            <select class="form-control input-sm mb-md" name="member_role" id="member_role" path="userRole">
+                                <option value="STUDENT">Student</option>
+                                <option value="TEACHER">Teacher</option>
                             </select>
                         </div>
                     </div>
@@ -113,8 +115,8 @@ function postJsonDataFromApi(url, data) {
                 firstName: $("#fname").val(),
                 lastName: $("#lname").val(),
                 address: $("#address").val(),
-                contactNumber: $("#contactNo").val()
-                //memberRole : $("#member_role").val()
+                contactNumber: $("#contactNo").val(),
+                memberRole: $("#member_role").val()
 
             };
 
